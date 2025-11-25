@@ -22,9 +22,29 @@ To write a Python program to evaluate the value of **sinh(x)** for **n terms** u
 ---
 
 ## 💻 PROGRAM:
+```
+def fact(n):
+    if n <= 1:
+        return 1
+    else:
+        return n * fact(n - 1)
+def sinh(x, n):
+    if n == 0:
+        return x  # First term of the series
+    else:
+        return (pow(x, 2*n + 1) / fact(2*n + 1)) + sinh(x, n - 1)
+x = float(input("Enter the value of x: "))
+n = int(input("Enter the number of terms (n): "))
+result = sinh(x, n)
 
-ADD CODE HERE
+print(f"sinh({x}) using {n} terms is: {result}")
 
+```
 ## OUTPUT
-
+```
+Enter the value of x: 2
+Enter the number of terms (n): 4
+sinh(2.0) using 4 terms is: 3.626860407847019
+```
 ## RESULT
+Hence evaluated sinh(x) using n terms of its Taylor series via recursion.
