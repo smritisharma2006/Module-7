@@ -20,9 +20,25 @@ To write a Python program to check whether a given string is a **palindrome** us
 ---
 
 ## 💻 PROGRAM:
-ADD CODE HERE
+```
+def is_palindrome(word):
+    if len(word) < 1:
+        return True
+    if word[0] == word[-1]:
+        return is_palindrome(word[1:-1])
+    else:
+        return False
+input_str = input("Enter a string: ").strip()
+if is_palindrome(input_str):
+    print(f'"{input_str}" is a palindrome.')
+else:
+    print(f'"{input_str}" is not a palindrome.')
 
+```
 ## OUTPUT
-
+```
+Enter a string: racecar
+"racecar" is a palindrome.
+```
 ## RESULT
-
+Hence checked whether a given string is a **palindrome** using **recursion**.
